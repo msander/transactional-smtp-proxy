@@ -26,4 +26,5 @@ class TransactionalHandler(aiosmtpd.handlers.AsyncMessage):
 
         if transactional_mail:
             log.info(f'Transactional Mail has been sent to {",".join(message.get_all("to", []))}')
+        else:
             log.info(f'Non-Transactional Mail has been sent to {",".join(message.get_all("to", []))}')
